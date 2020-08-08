@@ -1,66 +1,60 @@
 <template>
   <div id="app">
 
-    <input v-model="search" type="text">
-    <button @click="getWeatherByCoords">Add</button>
-    <div class="wrapper" v-if="info">
-      
-      <div class="sity-name">
-      {{info.name}}
-    </div>
-    <div class="icon">
-      <img :src="`http://openweathermap.org/img/wn/${info.weather[0].icon}@2x.png`">
-    </div>
-    <!-- /.icon -->
-    <div class="status">
-      {{info.weather[0].main}}
-    </div>
-    <!-- /.status -->
-    <div class="temp">
-      {{`${Math.floor(info.main.temp - 273)}&#176C`}}
-    </div>
-    <!-- /.temp -->
-    </div> 
+   <NewWeather
+   :search="search"
+   @getWeatherByCoords="getWeatherByCoords" />
+  
+  <WeatherDisplay
+  :weatherData="weatherData" />
   </div>
 </template>
 
 <script>
+import NewWeather from '@/components/NewWeather.vue'
+import WeatherDisplay from '@/components/WeatherDisplay.vue'
 export default {
- 
+ components: {
+   NewWeather,
+   WeatherDisplay
+ },
   data () {
     return {
-      info: null,
-      search: '',
-
+      search: {
+        city: ''
+      },
+      weatherData: []
     };
   },
   methods: {
     getWeatherByCoords () {
       this.$axios
-      .get(`https://api.openweathermap.org/data/2.5/weather?q=${ this.search }&appid=b385654260d2d01837d1c6041cb10101`)
-      .then(response => (this.info = response.data))
-      if (this.search == '') {
-        return false
-      }
-      this.search = '';
+      .get(`https://api.openweathermap.org/data/2.5/weather?q=${ this.search.city}&appid=b385654260d2d01837d1c6041cb10101`)
+      .then(response => (this.weatherData.push(response.data)))
+      this.search.city = ''
     },
-  }
+  },
 }
 </script>
-
 <style>
 #app {
+   
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background: #fcfcfc;
 }
-.rapper {
-  margin-left: 260px;
-  border: 1px solid gray;
+.wrapper {
+  background: white;
+  border-radius: 3%;
+  margin-top: 50px;
+  margin-left: 30px;
+  box-shadow: -1px 3px 19px -9px rgba(0,0,0,0.75);
   width: 200px;
   height: 250px;
+}
+.info {
+ display: flex;
 }
 </style>
