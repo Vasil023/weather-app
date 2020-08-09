@@ -35,8 +35,6 @@
         <!-- /.temp-title -->
         </div>
         <!-- /.temp-max-wrapper -->
-        
-
         <div class="temp-min-wrapper">
           <div class="temp-min-icon">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"

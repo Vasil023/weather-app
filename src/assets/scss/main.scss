@@ -26,7 +26,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
-  background-color: #f7f7f7;
+ 
 }
 
 *, *:before, *:after { box-sizing: border-box; }
@@ -62,15 +62,8 @@ section, .section {
 .wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  margin: 0 auto;
 }
 
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
 .container {
   width: 100%;
