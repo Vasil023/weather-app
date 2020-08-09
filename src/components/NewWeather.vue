@@ -1,7 +1,9 @@
 <template>
     <div class="searchWeather">
-      <input v-model="search.city" type="text">
-      <button @click="getWeatherByCoords">Add</button>
+      <input v-model="search.city" type="text" placeholder="Search city">
+      <div class="click" @click="getWeatherByCoords">
+        <img src="https://img.icons8.com/ios/24/000000/search--v1.png"/>
+      </div>
     </div>
     <!-- /.searchWeather -->
 </template>
@@ -22,3 +24,13 @@ export default {
     
 }
 </script>
+
+<style scoped>
+.searchWeather {
+  display: flex;
+  margin-left: 300px;
+}
+.click {
+  margin-left: 15px;
+}
+</style>
