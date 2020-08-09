@@ -29,11 +29,9 @@ export default {
   methods: {
     getWeatherByCoords () {
       this.$axios
-      .get(`https://api.openweathermap.org/data/2.5/weather?q=${ this.search.city }&appid=b385654260d2d01837d1c6041cb10101`)
+      .get(`https://api.openweathermap.org/data/2.5/weather?q=${ this.search.city}&appid=b385654260d2d01837d1c6041cb10101`)
       .then(response => (this.weatherData.push(response.data)))
-      if (this.search == '') {
-        return false
-      }
+      
       this.search = '';
     },
     
