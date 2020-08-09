@@ -4,10 +4,10 @@
    <NewWeather
    :search="search"
    @getWeatherByCoords="getWeatherByCoords" />
-  
   <WeatherDisplay
   :weatherData="weatherData" />
   </div>
+  
 </template>
 
 <script>
@@ -28,11 +28,16 @@ export default {
   },
   methods: {
     getWeatherByCoords () {
-      this.$axios
-      .get(`https://api.openweathermap.org/data/2.5/weather?q=${ this.search.city}&appid=b385654260d2d01837d1c6041cb10101`)
+    
+ this.$axios
+      .get(`https://api.openweathermap.org/data/2.5/weather?q=${ this.search.city }&appid=b385654260d2d01837d1c6041cb10101`)
       .then(response => (this.weatherData.push(response.data)))
-      this.search.city = ''
+      if (this.search == '') {
+        return false
+      }
+      this.search = '';
     },
+    
   },
 }
 </script>
@@ -51,8 +56,8 @@ export default {
   margin-top: 50px;
   margin-left: 30px;
   box-shadow: -1px 3px 19px -9px rgba(0,0,0,0.75);
-  width: 200px;
-  height: 250px;
+  width: 175px;
+  height: 260px;
 }
 .info {
  display: flex;
