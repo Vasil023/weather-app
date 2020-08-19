@@ -3,6 +3,7 @@
       <div class="info-wrraper">
         <carousel
        :perPage="3"
+       ::perPageCustom="[[540, 1], [1024, 3]]"
        >
         <slide
         v-for="(note, index) in weatherData" :key="index">
@@ -12,7 +13,7 @@
           </div>
           <!-- /.title -->
         <div class="weather-icon">
-          <img :src="`http://openweathermap.org/img/wn/${note.weather[0].icon}.png`">
+          <img :src="`http://openweathermap.org/img/wn/${note.weather[0].icon}@4x.png`">
         </div>
         <!-- /.weather-icon -->
           <div class="weather-temp">
@@ -94,11 +95,12 @@ export default {
   font-family: 'Thasadith';
 }
 img {
-    width: 80px;
+    height: 168px;
+    margin-top: -20px;
   }
 .weather-temp {
   margin-left: 21px;
-  font-size: 40px;
+  font-size: 47px;
   font-family: 'Thasadith';
 }
 .weather-status {
