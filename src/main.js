@@ -4,6 +4,9 @@ import axios from 'axios'
 import store from './store'
 import VueAxios from './plugins/axios'
 
+import VueCarousel from 'vue-carousel';
+Vue.use(VueCarousel);
+
 import './assets/scss/main.scss'
 
 Vue.use(VueAxios)

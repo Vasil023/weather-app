@@ -56,7 +56,4 @@ export default {
   width: 175px;
   height: 285px;
 }
-.info {
- display: flex;
-}
 </style>

@@ -28,7 +28,7 @@ export default {
 <style scoped>
 .searchWeather {
   display: flex;
-  margin-left: 300px;
+  justify-content: center;
 }
 .click {
   margin-left: 15px;
