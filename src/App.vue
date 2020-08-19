@@ -34,8 +34,8 @@ export default {
       .then(response => (this.weatherData.push(response.data)))
       this.search.city = '';
     },
-    
   },
+
 }
 </script>
 <style>
