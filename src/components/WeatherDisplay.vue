@@ -3,7 +3,7 @@
       <div class="info-wrraper">
         <carousel
        :perPage="3"
-       ::perPageCustom="[[540, 1], [1024, 3]]"
+       ::perPageCustom="[[540, 2], [1024, 3]]"
        >
         <slide
         v-for="(note, index) in weatherData" :key="index">
@@ -134,4 +134,14 @@ img {
   color: red;
   font-family: 'Thasadith';
 }
+@media screen and (max-width: 480px) {
+    .info {
+      width: 320px;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .info {
+      width: 420px;
+    }
+  }
 </style>
