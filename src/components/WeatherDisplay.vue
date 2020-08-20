@@ -89,6 +89,9 @@ export default {
 .info {
   width: 720px;
 }
+.wrapper:hover {
+  box-shadow: 4px 3px 19px -9px rgba(0,0,0,0.75);
+}
 .weather-name {
   margin-top: 10px;
   font-size: 16px;
