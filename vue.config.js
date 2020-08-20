@@ -1,5 +1,6 @@
 module.exports = {
+    runtimeCompiler: true,
     publicPath: process.env.NODE_ENV === 'production'
-      ? '/dist/'
+      ? '/weather-app/dist/'
       : '/'
   }
