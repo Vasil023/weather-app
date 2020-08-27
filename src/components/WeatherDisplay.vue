@@ -140,7 +140,6 @@ img {
       margin-left: auto;
       margin-right: auto;
     }
-   
      .container {
       width: 370px;
     }
