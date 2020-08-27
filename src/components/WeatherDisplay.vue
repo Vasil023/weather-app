@@ -140,6 +140,9 @@ img {
       margin-left: auto;
       margin-right: auto;
     }
+    .info-wrraper {
+      width: 250px;
+    }
      .container {
       width: 370px;
     }
