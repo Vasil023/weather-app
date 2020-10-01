@@ -1,5 +1,6 @@
 <template>
     <div class="info">
+     
       <div class="info-wrraper">
         <carousel
        :perPage="3"
@@ -82,33 +83,39 @@ export default {
       required: true
     }
   },
+  methods: {
+    
+  }
+  
 }
 </script>
 
 <style scoped>
-.info {
-  width: 720px;
+.wrapper {
+  width: 374px;
+  height: 600px;
 }
+
 .wrapper:hover {
   box-shadow: 4px 3px 19px -9px rgba(0,0,0,0.75);
 }
 .weather-name {
   margin-top: 10px;
-  font-size: 16px;
-  font-family: 'Thasadith';
+  font-size: 25px;
+  font-family: 'Raleway';
 }
 img {
     height: 168px;
-    margin-top: -20px;
+    margin-top: 45px;
   }
 .weather-temp {
   margin-left: 21px;
-  font-size: 47px;
-  font-family: 'Thasadith';
+  font-size: 120px;
+  font-family: 'Raleway';
 }
 .weather-status {
   font-size: 16px;
-  font-family: 'Thasadith';
+  font-family: 'Raleway';
 }
 .temp {
   margin-top: 20px;
@@ -116,10 +123,10 @@ img {
   justify-content: space-around;
 }
 .temp-max {
-  font-size: 14px;
+  font-size: 30px;
 }
 .temp-min {
-  font-size: 15px;
+  font-size: 30px;
 }
 .temp-max-wrapper {
   margin-top: 2px;
@@ -127,12 +134,12 @@ img {
 .temp-title {
   font-size: 12px;
   color: green;
-  font-family: 'Thasadith';
+  font-family: 'Raleway';
 }
 .temp-min-title {
   font-size: 12px;
   color: red;
-  font-family: 'Thasadith';
+  font-family: 'Raleway';
 }
 @media screen and (max-width: 480px) {
     .info {

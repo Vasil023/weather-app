@@ -1,11 +1,13 @@
 <template>
   <div id="app">
+    <NavBar />
     <div class="container">
-      <NewWeather
-      :search="search"
-        @getWeatherByCoords="getWeatherByCoords" />
+        
         <WeatherDisplay
         :weatherData="weatherData" />
+         <NewWeather
+         :search="search"
+        @getWeatherByCoords="getWeatherByCoords" />
     </div>
     <!-- /.container -->
   </div>
@@ -14,17 +16,19 @@
 <script>
 import NewWeather from '@/components/NewWeather.vue'
 import WeatherDisplay from '@/components/WeatherDisplay.vue'
+import NavBar from '@/components/NavBar.vue'
 export default {
  components: {
    NewWeather,
-   WeatherDisplay
+   WeatherDisplay,
+   NavBar
  },
   data () {
     return {
       search: {
         city: ""
       },
-      weatherData: []
+      weatherData: [],
     };
   },
   methods: {
@@ -33,9 +37,21 @@ export default {
       .get(`https://api.openweathermap.org/data/2.5/weather?q=${ this.search.city}&appid=b385654260d2d01837d1c6041cb10101`)
       .then(response => (this.weatherData.push(response.data)))
       this.search.city = '';
-      console.log(this.weatherData)
     },
   },
+  // watch: {
+  //   weatherData () {
+  //   for(let i = 0; i<=this.weatherData.length; i++) {
+  //        if (this.weatherData[i].weather[0].main === 'Clouds'){
+  //       console.log('clouds')
+  //       } else if (this.weatherData[i].weather[0].main === 'Clear') { 
+  //       console.log('clear')
+  //       }  else if (this.weatherData[i].weather[0].main === 'Rain') {
+  //       console.log('rain')
+  //       }
+  //     }
+  //   }
+  // }
 
 }
 </script>
@@ -45,7 +61,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 4ziozeoow0px;
   
 }
 .wrapper {
