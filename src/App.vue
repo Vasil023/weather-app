@@ -2,12 +2,11 @@
   <div id="app">
     <NavBar />
     <div class="container">
-        
-        <WeatherDisplay
-        :weatherData="weatherData" />
-         <NewWeather
+       <NewWeather
          :search="search"
         @getWeatherByCoords="getWeatherByCoords" />
+        <WeatherDisplay
+        :weatherData="weatherData" />
     </div>
     <!-- /.container -->
   </div>
@@ -39,20 +38,6 @@ export default {
       this.search.city = '';
     },
   },
-  // watch: {
-  //   weatherData () {
-  //   for(let i = 0; i<=this.weatherData.length; i++) {
-  //        if (this.weatherData[i].weather[0].main === 'Clouds'){
-  //       console.log('clouds')
-  //       } else if (this.weatherData[i].weather[0].main === 'Clear') { 
-  //       console.log('clear')
-  //       }  else if (this.weatherData[i].weather[0].main === 'Rain') {
-  //       console.log('rain')
-  //       }
-  //     }
-  //   }
-  // }
-
 }
 </script>
 <style>
@@ -63,14 +48,5 @@ export default {
   color: #2c3e50;
   margin-top: 4ziozeoow0px;
   
-}
-.wrapper {
-  background: white;
-  border-radius: 3%;
-  margin-top: 50px;
-  margin-left: 30px;
-  box-shadow: -1px 3px 19px -9px rgba(0,0,0,0.75);
-  width: 204px;
-  height: 361px;
 }
 </style>

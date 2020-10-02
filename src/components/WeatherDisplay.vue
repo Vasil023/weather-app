@@ -1,6 +1,5 @@
 <template>
     <div class="info">
-     
       <div class="info-wrraper">
         <carousel
        :perPage="3"
@@ -83,10 +82,6 @@ export default {
       required: true
     }
   },
-  methods: {
-    
-  }
-  
 }
 </script>
 
@@ -94,11 +89,15 @@ export default {
 .wrapper {
   width: 374px;
   height: 600px;
+  background: white;
+  border-radius: 3%;
+  margin-top: 50px;
+  margin-left: 30px;
+  box-shadow: 0px 2px 23px 0px rgba(243,244,255,1);
+
 }
 
-.wrapper:hover {
-  box-shadow: 4px 3px 19px -9px rgba(0,0,0,0.75);
-}
+
 .weather-name {
   margin-top: 10px;
   font-size: 25px;
