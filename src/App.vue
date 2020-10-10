@@ -34,9 +34,19 @@ export default {
         city: ""
       },
       weatherData: [],
+      weather: null,
       isDarkMode: true,
       active: true
     };
+  },
+  mounted () {
+    if (localStorage.getItem('weatherData')) {
+      try {
+        this.weatherData = JSON.parse(localStorage.getItem('weatherData'));
+      } catch (e) {
+        localStorage.removeItem('weatherData');
+      }
+    }
   },
   methods: {
     getWeatherByCoords () {
@@ -44,11 +54,19 @@ export default {
       .get(`https://api.openweathermap.org/data/2.5/weather?q=${ this.search.city}&appid=b385654260d2d01837d1c6041cb10101`)
       .then(response => (this.weatherData.push(response.data)))
       this.search.city = '';
+      this.saveWeather();
+    },
+    removeItem (x) {
+      this.weatherData.splice(x, 1)
+      this.saveWeather()
+    },
+    saveWeather () {
+      const parsed = JSON.stringify(this.weatherData);
+      localStorage.setItem('weatherData', parsed)
     },
     togleDarkMode () {
     this.isDarkMode = !this.isDarkMode
     this.active = !this.active
-    
   }
   },
   
