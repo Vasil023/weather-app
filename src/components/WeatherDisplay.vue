@@ -7,7 +7,8 @@
        >
         <slide
         v-for="(note, index) in weatherData" :key="index">
-      <div class="wrapper" > 
+      <div @click="click(note)" class="wrapper" :class="{'light-thems' : !dark,
+      'dark-thems' : dark}" > 
           <div class="weather-name">
             {{note.name}}
           </div>
@@ -80,8 +81,17 @@ export default {
     weatherData: {
       type: Array,
       required: true
+    },
+    dark: {
+      type: Boolean,
+      required: true
     }
   },
+  methods: {
+    click (index) {
+      console.log(index.name)
+    }
+  }
 }
 </script>
 
@@ -93,11 +103,9 @@ export default {
   border-radius: 3%;
   margin-top: 50px;
   margin-left: 30px;
-  box-shadow: 0px 2px 23px 0px rgba(243,244,255,1);
+  box-shadow: 0px 1px 23px 0px rgba(243,244,255,1);
 
 }
-
-
 .weather-name {
   margin-top: 10px;
   font-size: 25px;
@@ -139,6 +147,11 @@ img {
   font-size: 12px;
   color: red;
   font-family: 'Raleway';
+}
+.dark-thems {
+  background: linear-gradient(to bottom, #00057A,  #721C87);
+  color: white;
+  box-shadow: none;
 }
 @media screen and (max-width: 480px) {
     .info {

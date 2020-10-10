@@ -1,12 +1,18 @@
 <template>
-  <div id="app">
-    <NavBar />
+  <div id="app" :class="{'light-thems' : !isDarkMode,
+  'dark-thems' : isDarkMode}">
+    <NavBar 
+    :dark="isDarkMode"
+    :toggle="active"
+    @togleDarkMode="togleDarkMode" />
     <div class="container">
        <NewWeather
          :search="search"
         @getWeatherByCoords="getWeatherByCoords" />
         <WeatherDisplay
-        :weatherData="weatherData" />
+        :weatherData="weatherData"
+        :dark="isDarkMode"
+        :togleDarkMode="togleDarkMode"  />
     </div>
     <!-- /.container -->
   </div>
@@ -28,6 +34,8 @@ export default {
         city: ""
       },
       weatherData: [],
+      isDarkMode: true,
+      active: true
     };
   },
   methods: {
@@ -37,16 +45,28 @@ export default {
       .then(response => (this.weatherData.push(response.data)))
       this.search.city = '';
     },
+    togleDarkMode () {
+    this.isDarkMode = !this.isDarkMode
+    this.active = !this.active
+    
+  }
   },
+  
 }
 </script>
 <style>
+.dark-thems {
+  background: linear-gradient(to bottom, #00057A,  #721C87);
+}
+.light-thems {
+  background: while;
+}
 #app {
-
+  height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
-  margin-top: 4ziozeoow0px;
+  
   
 }
 </style>
