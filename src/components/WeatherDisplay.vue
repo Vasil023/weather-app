@@ -7,7 +7,7 @@
        >
         <slide
         v-for="(note, index) in weatherData" :key="index">
-      <div @click="click(note)" class="wrapper" :class="{'light-thems' : !dark,
+      <div @click="click(index)" class="wrapper" :class="{'light-thems' : !dark,
       'dark-thems' : dark}" > 
           <div class="weather-name">
             {{note.name}}
@@ -69,8 +69,6 @@
 </carousel>
       </div>
       <!-- /.info-wrraper -->
-       
-    
      </div>
       <!-- /.info -->
 </template>
@@ -89,7 +87,7 @@ export default {
   },
   methods: {
     click (index) {
-      console.log(index.name)
+     return console.log(this.weatherData[index])
     }
   }
 }
@@ -139,12 +137,12 @@ img {
   margin-top: 2px;
 }
 .temp-title {
-  font-size: 12px;
+  font-size: 19px;
   color: green;
   font-family: 'Raleway';
 }
 .temp-min-title {
-  font-size: 12px;
+  font-size: 19px;
   color: red;
   font-family: 'Raleway';
 }

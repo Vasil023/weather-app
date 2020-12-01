@@ -12,7 +12,9 @@
         <WeatherDisplay
         :weatherData="weatherData"
         :dark="isDarkMode"
-        :togleDarkMode="togleDarkMode"  />
+        :togleDarkMode="togleDarkMode"
+        />
+    
     </div>
     <!-- /.container -->
   </div>
@@ -68,8 +70,7 @@ export default {
     this.isDarkMode = !this.isDarkMode
     this.active = !this.active
   }
-  },
-  
+  },  
 }
 </script>
 <style>
@@ -84,7 +85,5 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
-  
-  
 }
 </style>
