@@ -14,7 +14,8 @@
           </div>
           <!-- /.title -->
         <div class="weather-icon">
-          <img :src="`http://openweathermap.org/img/wn/${note.weather[0].icon}@4x.png`">
+
+          <img :src="getImg(`${note.weather[0].icon}`)">
         </div>
         <!-- /.weather-icon -->
           <div class="weather-temp">
@@ -88,7 +89,13 @@ export default {
   methods: {
     click (index) {
      return console.log(this.weatherData[index])
+    },
+    getImg(path) {
+      return require('../assets/icons/' + path + '.png')
     }
+  },
+  created: {
+
   }
 }
 </script>
