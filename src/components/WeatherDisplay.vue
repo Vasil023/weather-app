@@ -1,9 +1,9 @@
 <template>
     <div class="info">
-      <div class="info-wrraper">
+      <div class="info-wrapper">
         <carousel
-       :perPage="3"
-       :perPageCustom="[[320, 1], [360, 1], [576, 1], [800, 3]]"
+
+       :perPageCustom="[[375, 1],[768, 1], [1024, 3]]"
        >
         <slide
         v-for="(note, index) in weatherData" :key="index">

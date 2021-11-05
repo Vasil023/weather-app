@@ -2,15 +2,15 @@
   <div class="nav-bar" :class="{'light-thems' : !dark,
   'dark' : dark}">
     <div class="wrapper-logo">
-      <div class="nav-bar--button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="0 0 49.945 32">
-        <g id="Menu_Burger_Icon" data-name="Menu Burger Icon" transform="translate(-31.528 -30)">
-          <rect id="Прямоугольник_9" data-name="Прямоугольник 9" width="49.945" height="4" rx="2" transform="translate(31.528 58)" fill="#594e78"/>
-          <rect id="Прямоугольник_10" data-name="Прямоугольник 10" width="49.945" height="4" rx="2" transform="translate(31.528 44)" fill="#594e78"/>
-          <rect id="Прямоугольник_11" data-name="Прямоугольник 11" width="49.945" height="4" rx="2" transform="translate(31.528 30)" fill="#594e78"/>
-        </g>
-      </svg>
-    </div>
+<!--      <div class="nav-bar&#45;&#45;button">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="0 0 49.945 32">-->
+<!--        <g id="Menu_Burger_Icon" data-name="Menu Burger Icon" transform="translate(-31.528 -30)">-->
+<!--          <rect id="Прямоугольник_9" data-name="Прямоугольник 9" width="49.945" height="4" rx="2" transform="translate(31.528 58)" fill="#594e78"/>-->
+<!--          <rect id="Прямоугольник_10" data-name="Прямоугольник 10" width="49.945" height="4" rx="2" transform="translate(31.528 44)" fill="#594e78"/>-->
+<!--          <rect id="Прямоугольник_11" data-name="Прямоугольник 11" width="49.945" height="4" rx="2" transform="translate(31.528 30)" fill="#594e78"/>-->
+<!--        </g>-->
+<!--      </svg>-->
+<!--    </div>-->
     <!-- /.nav-bar--button -->
     <div class="nav-bar--logo" :class="{'color-white' : !dark,
     'color-logo' : dark}">
@@ -41,6 +41,7 @@
 </template>
 
 <script>
+
 export default {
   props: {
     dark: {

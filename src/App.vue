@@ -37,7 +37,7 @@ export default {
       },
       weatherData: [],
       weather: null,
-      isDarkMode: true,
+      isDarkMode: false,
       active: true
     };
   },
