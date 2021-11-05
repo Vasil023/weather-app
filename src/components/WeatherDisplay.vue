@@ -7,9 +7,10 @@
        >
         <slide
         v-for="(note, index) in weatherData" :key="index">
-      <div @click="click(index)" class="wrapper" :class="{'light-thems' : !dark,
-      'dark-thems' : dark}" > 
+      <div @click="click(index)" class="wrapper" :class="{'light-themes' : !dark,
+      'dark-themes' : dark}" >
           <div class="weather-name">
+            <p @click="removeItem(index)">x</p>
             {{note.name}}
           </div>
           <!-- /.title -->
@@ -92,11 +93,11 @@ export default {
     },
     getImg(path) {
       return require('../assets/icons/' + path + '.png')
+    },
+    removeItem (index) {
+      this.$emit('removeItem', index)
     }
   },
-  created: {
-
-  }
 }
 </script>
 
@@ -115,6 +116,9 @@ export default {
   margin-top: 10px;
   font-size: 25px;
   font-family: 'Raleway';
+}
+.weather-name p {
+  padding-left: 320px;
 }
 img {
     height: 168px;
@@ -153,7 +157,7 @@ img {
   color: red;
   font-family: 'Raleway';
 }
-.dark-thems {
+.dark-themes {
   background: linear-gradient(to bottom, #00057A,  #721C87);
   color: white;
   box-shadow: none;

@@ -1,6 +1,6 @@
 <template>
-  <div id="app" :class="{'light-thems' : !isDarkMode,
-  'dark-thems' : isDarkMode}">
+  <div id="app" :class="{'light-themes' : !isDarkMode,
+  'dark-themes' : isDarkMode}">
     <NavBar 
     :dark="isDarkMode"
     :toggle="active"
@@ -13,6 +13,7 @@
         :weatherData="weatherData"
         :dark="isDarkMode"
         :togleDarkMode="togleDarkMode"
+        @removeItem="removeItem"
         />
     
     </div>
@@ -74,10 +75,10 @@ export default {
 }
 </script>
 <style>
-.dark-thems {
+.dark-themes {
   background: linear-gradient(to bottom, #00057A,  #721C87);
 }
-.light-thems {
+.light-themes {
   background: while;
 }
 #app {
